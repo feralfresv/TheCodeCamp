@@ -16,13 +16,13 @@ namespace TheCodeCamp.Data
                 .ReverseMap();
 
 
-            //CreateMap<Talk, TalkModel>()
-            //    .ReverseMap(); 
+            CreateMap<Talk, TalkModel>()
+                .ReverseMap()
+            .ForMember(t => t.Speaker, opt => opt.Ignore())
+            .ForMember(t => t.Camp, opt => opt.Ignore());
 
-            //CreateMap<Speaker, SpeakerModel>()
-            //    .ReverseMap(); 
-            CreateMap<Talk, TalkModel>();
-            CreateMap<Speaker, SpeakerModel>();
+            CreateMap<Speaker, SpeakerModel>()
+                .ReverseMap(); 
         }
 
     }
